@@ -4,6 +4,13 @@
 [![CodeCov][codecov badge]][codecov]
 [![LICENSE][license badge]][license]
 
+## Status
+
+- [x] Parses `uci export` syntax
+- [ ] Parses `uci show` syntax
+- [ ] serde support
+- [ ] Produces `uci export` syntax
+- [ ] Produces `uci show` syntax
 
 # Acknowledgements
 
