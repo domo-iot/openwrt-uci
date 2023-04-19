@@ -6,5 +6,10 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+anyhow = "1.0.70"
 chumsky = "0.9.2"
 serde = { version = "1.0.160", features = ["derive"] }
+toml_edit = { version = "0.19.8", features = ["serde"] }
+
+[dev-dependencies]
+toml = "0.7.3"

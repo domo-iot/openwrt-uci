@@ -9,7 +9,7 @@ enum Opt {
     ListItem { key: String, value: String },
 }
 
-fn parser() -> impl Parser<char, Vec<Section>, Error = Simple<char>> {
+pub fn parser() -> impl Parser<char, Vec<Section>, Error = Simple<char>> {
     //    let s = choice((quoted('"'), quoted('\''), text::ident()));
     let quoted = |quote| {
         let escape = just('\\').ignore_then(

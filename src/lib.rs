@@ -4,16 +4,17 @@
 
 use std::collections::HashMap;
 
-mod parser;
+pub mod parser;
+pub mod writer;
 
 /// Main configuration group
 ///
 /// Each configuration group has it's own file in `/etc/config`.
 #[derive(Debug)]
 pub struct Config {
-    name: String,
+    pub name: String,
     /// Sections with their priority order
-    sections: Vec<Section>,
+    pub sections: Vec<Section>,
 }
 
 /// Secondary configuration group
@@ -21,8 +22,16 @@ pub struct Config {
 /// Every [Config] is divided into sections.
 #[derive(Debug)]
 pub struct Section {
-    name: Option<String>,
-    type_: String,
+    pub name: Option<String>,
+    pub type_: String,
     /// Either a string or a Vec of Strings
-    options: HashMap<String, Vec<String>>,
+    pub options: HashMap<String, Vec<String>>,
+}
+
+impl Config {
+    pub fn to_document() -> anyhow::Result<toml_edit::Document> {
+        // let mut doc = toml_edit::Document::new();
+
+        todo!()
+    }
 }
